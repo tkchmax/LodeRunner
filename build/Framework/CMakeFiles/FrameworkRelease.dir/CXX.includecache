@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Framework/inc/Framework.h
+
+/home/max/projects++/LodeRunner/Framework/src/launch.cpp
+SDL2/SDL_pixels.h
+-
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+SDL2/SDL.h
+/home/max/projects++/LodeRunner/Framework/src/SDL2/SDL.h
+SDL2/SDL_image.h
+/home/max/projects++/LodeRunner/Framework/src/SDL2/SDL_image.h
+inc/Framework.h
+/home/max/projects++/LodeRunner/Framework/src/inc/Framework.h
+
