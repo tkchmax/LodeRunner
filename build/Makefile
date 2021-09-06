@@ -136,6 +136,33 @@ FrameworkRelease/fast:
 	$(MAKE) -f Framework/CMakeFiles/FrameworkRelease.dir/build.make Framework/CMakeFiles/FrameworkRelease.dir/build
 .PHONY : FrameworkRelease/fast
 
+sources/Character.o: sources/Character.cpp.o
+
+.PHONY : sources/Character.o
+
+# target to build an object file
+sources/Character.cpp.o:
+	$(MAKE) -f CMakeFiles/LodeRunner.dir/build.make CMakeFiles/LodeRunner.dir/sources/Character.cpp.o
+.PHONY : sources/Character.cpp.o
+
+sources/Character.i: sources/Character.cpp.i
+
+.PHONY : sources/Character.i
+
+# target to preprocess a source file
+sources/Character.cpp.i:
+	$(MAKE) -f CMakeFiles/LodeRunner.dir/build.make CMakeFiles/LodeRunner.dir/sources/Character.cpp.i
+.PHONY : sources/Character.cpp.i
+
+sources/Character.s: sources/Character.cpp.s
+
+.PHONY : sources/Character.s
+
+# target to generate assembly for a file
+sources/Character.cpp.s:
+	$(MAKE) -f CMakeFiles/LodeRunner.dir/build.make CMakeFiles/LodeRunner.dir/sources/Character.cpp.s
+.PHONY : sources/Character.cpp.s
+
 sources/Guard.o: sources/Guard.cpp.o
 
 .PHONY : sources/Guard.o
@@ -281,6 +308,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... LodeRunner"
 	@echo "... FrameworkRelease"
+	@echo "... sources/Character.o"
+	@echo "... sources/Character.i"
+	@echo "... sources/Character.s"
 	@echo "... sources/Guard.o"
 	@echo "... sources/Guard.i"
 	@echo "... sources/Guard.s"

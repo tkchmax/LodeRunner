@@ -3,20 +3,18 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <vector>
-#include "Framework.h"
+#include "Character.h"
 
-namespace Game 
+namespace game 
 {
-
-class Player 
+    
+class Player : public Character 
 {
 public:
-    void draw();
-    void move(FRKey k);
+    Player() : Character() {}
+    Player(int start_x, int start_y) : Character(start_x, start_y) {}
+    void run(FRKey k, const Level& lvl);
 private:
-    unsigned x, y;
-    unsigned movementId;
 };
 
 }

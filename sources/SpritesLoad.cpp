@@ -21,6 +21,7 @@ std::map<SpriteName, Sprite*> LoadSprites()
     sprites[SpriteName::lvl1_blue_h38] = createSprite("../data/menu/lvl1_blue_h38.png");
     sprites[SpriteName::lvl2_blue_h38] = createSprite("../data/menu/lvl2_blue_h38.png");
     sprites[SpriteName::lvl1_short] = createSprite("../data/menu/lvl1_short.png");
+    sprites[SpriteName::player_view_right] = createSprite("../data/characters/player_view_right.png");
 
     return sprites;
 }

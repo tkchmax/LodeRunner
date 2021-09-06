@@ -94,12 +94,12 @@ Framework/clean: Framework/CMakeFiles/FrameworkRelease.dir/clean
 CMakeFiles/LodeRunner.dir/all: Framework/CMakeFiles/FrameworkRelease.dir/all
 	$(MAKE) -f CMakeFiles/LodeRunner.dir/build.make CMakeFiles/LodeRunner.dir/depend
 	$(MAKE) -f CMakeFiles/LodeRunner.dir/build.make CMakeFiles/LodeRunner.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=3,4,5,6,7,8 "Built target LodeRunner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=3,4,5,6,7,8,9 "Built target LodeRunner"
 .PHONY : CMakeFiles/LodeRunner.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/LodeRunner.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/max/projects++/LodeRunner/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/max/projects++/LodeRunner/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/LodeRunner.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/max/projects++/LodeRunner/build/CMakeFiles 0
 .PHONY : CMakeFiles/LodeRunner.dir/rule

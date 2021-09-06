@@ -70,9 +70,22 @@ CMakeFiles/LodeRunner.dir/sources/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LodeRunner.dir/sources/game.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/projects++/LodeRunner/sources/game.cpp -o CMakeFiles/LodeRunner.dir/sources/game.cpp.s
 
+CMakeFiles/LodeRunner.dir/sources/Character.cpp.o: CMakeFiles/LodeRunner.dir/flags.make
+CMakeFiles/LodeRunner.dir/sources/Character.cpp.o: ../sources/Character.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/LodeRunner.dir/sources/Character.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LodeRunner.dir/sources/Character.cpp.o -c /home/max/projects++/LodeRunner/sources/Character.cpp
+
+CMakeFiles/LodeRunner.dir/sources/Character.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LodeRunner.dir/sources/Character.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/projects++/LodeRunner/sources/Character.cpp > CMakeFiles/LodeRunner.dir/sources/Character.cpp.i
+
+CMakeFiles/LodeRunner.dir/sources/Character.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LodeRunner.dir/sources/Character.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/projects++/LodeRunner/sources/Character.cpp -o CMakeFiles/LodeRunner.dir/sources/Character.cpp.s
+
 CMakeFiles/LodeRunner.dir/sources/Player.cpp.o: CMakeFiles/LodeRunner.dir/flags.make
 CMakeFiles/LodeRunner.dir/sources/Player.cpp.o: ../sources/Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/LodeRunner.dir/sources/Player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LodeRunner.dir/sources/Player.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LodeRunner.dir/sources/Player.cpp.o -c /home/max/projects++/LodeRunner/sources/Player.cpp
 
 CMakeFiles/LodeRunner.dir/sources/Player.cpp.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/LodeRunner.dir/sources/Player.cpp.s: cmake_force
 
 CMakeFiles/LodeRunner.dir/sources/Guard.cpp.o: CMakeFiles/LodeRunner.dir/flags.make
 CMakeFiles/LodeRunner.dir/sources/Guard.cpp.o: ../sources/Guard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LodeRunner.dir/sources/Guard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LodeRunner.dir/sources/Guard.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LodeRunner.dir/sources/Guard.cpp.o -c /home/max/projects++/LodeRunner/sources/Guard.cpp
 
 CMakeFiles/LodeRunner.dir/sources/Guard.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/LodeRunner.dir/sources/Guard.cpp.s: cmake_force
 
 CMakeFiles/LodeRunner.dir/sources/SpritesLoad.cpp.o: CMakeFiles/LodeRunner.dir/flags.make
 CMakeFiles/LodeRunner.dir/sources/SpritesLoad.cpp.o: ../sources/SpritesLoad.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LodeRunner.dir/sources/SpritesLoad.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LodeRunner.dir/sources/SpritesLoad.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LodeRunner.dir/sources/SpritesLoad.cpp.o -c /home/max/projects++/LodeRunner/sources/SpritesLoad.cpp
 
 CMakeFiles/LodeRunner.dir/sources/SpritesLoad.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/LodeRunner.dir/sources/SpritesLoad.cpp.s: cmake_force
 
 CMakeFiles/LodeRunner.dir/sources/Level.cpp.o: CMakeFiles/LodeRunner.dir/flags.make
 CMakeFiles/LodeRunner.dir/sources/Level.cpp.o: ../sources/Level.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LodeRunner.dir/sources/Level.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LodeRunner.dir/sources/Level.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LodeRunner.dir/sources/Level.cpp.o -c /home/max/projects++/LodeRunner/sources/Level.cpp
 
 CMakeFiles/LodeRunner.dir/sources/Level.cpp.i: cmake_force
@@ -125,6 +138,7 @@ CMakeFiles/LodeRunner.dir/sources/Level.cpp.s: cmake_force
 # Object files for target LodeRunner
 LodeRunner_OBJECTS = \
 "CMakeFiles/LodeRunner.dir/sources/game.cpp.o" \
+"CMakeFiles/LodeRunner.dir/sources/Character.cpp.o" \
 "CMakeFiles/LodeRunner.dir/sources/Player.cpp.o" \
 "CMakeFiles/LodeRunner.dir/sources/Guard.cpp.o" \
 "CMakeFiles/LodeRunner.dir/sources/SpritesLoad.cpp.o" \
@@ -134,6 +148,7 @@ LodeRunner_OBJECTS = \
 LodeRunner_EXTERNAL_OBJECTS =
 
 LodeRunner: CMakeFiles/LodeRunner.dir/sources/game.cpp.o
+LodeRunner: CMakeFiles/LodeRunner.dir/sources/Character.cpp.o
 LodeRunner: CMakeFiles/LodeRunner.dir/sources/Player.cpp.o
 LodeRunner: CMakeFiles/LodeRunner.dir/sources/Guard.cpp.o
 LodeRunner: CMakeFiles/LodeRunner.dir/sources/SpritesLoad.cpp.o
@@ -144,7 +159,7 @@ LodeRunner: /usr/lib/x86_64-linux-gnu/libSDL2.so
 LodeRunner: /usr/lib/x86_64-linux-gnu/libSDL2main.a
 LodeRunner: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
 LodeRunner: CMakeFiles/LodeRunner.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable LodeRunner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/max/projects++/LodeRunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable LodeRunner"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LodeRunner.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

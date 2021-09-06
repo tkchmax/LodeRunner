@@ -23,6 +23,8 @@ enum class SpriteName
     lvl1_short,
     separator_line,
     heart,
+    
+    player_view_right,
 
     player_widestep_right
 

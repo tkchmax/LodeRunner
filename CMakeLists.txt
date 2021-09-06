@@ -7,6 +7,7 @@ include_directories(Framework/inc include data/menu)
 
 set(SOURCES 
     sources/game.cpp
+    sources/Character.cpp
     sources/Player.cpp
     sources/Guard.cpp
     sources/SpritesLoad.cpp
@@ -14,6 +15,7 @@ set(SOURCES
     
 
 set(HEADERS
+    include/Character.h
     include/Player.h
     include/Guard.h
     include/SpritesLoad.h

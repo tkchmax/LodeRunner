@@ -11,7 +11,7 @@
 #include <map>
 #include "SpritesLoad.h"
 
-namespace Game
+namespace game
 {
    
 const int UNIT_SIZE = 38; 
@@ -31,6 +31,7 @@ class Level
         Level() : rawLevel_("none"), nGuards_(0){}
         void draw();
         void showBoard();
+        const std::vector<std::vector<UNIT_TYPE>>& getBoard() {return board_;}
     private:
         std::vector<std::vector<UNIT_TYPE>> board_;
         std::string rawLevel_;

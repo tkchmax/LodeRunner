@@ -3,11 +3,16 @@
 #ifndef GUARD_H
 #define GUARD_H
 
+#include "Character.h"
 
-class Guard
+namespace game 
+{
+
+class Guard : public Character
 {
 public:
 private:
 };
 
+}
 #endif

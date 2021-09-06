@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/LodeRunner.dir/sources/Character.cpp.o"
   "CMakeFiles/LodeRunner.dir/sources/Guard.cpp.o"
   "CMakeFiles/LodeRunner.dir/sources/Level.cpp.o"
   "CMakeFiles/LodeRunner.dir/sources/Player.cpp.o"

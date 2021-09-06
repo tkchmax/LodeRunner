@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/max/projects++/LodeRunner/sources/Character.cpp" "/home/max/projects++/LodeRunner/build/CMakeFiles/LodeRunner.dir/sources/Character.cpp.o"
   "/home/max/projects++/LodeRunner/sources/Guard.cpp" "/home/max/projects++/LodeRunner/build/CMakeFiles/LodeRunner.dir/sources/Guard.cpp.o"
   "/home/max/projects++/LodeRunner/sources/Level.cpp" "/home/max/projects++/LodeRunner/build/CMakeFiles/LodeRunner.dir/sources/Level.cpp.o"
   "/home/max/projects++/LodeRunner/sources/Player.cpp" "/home/max/projects++/LodeRunner/build/CMakeFiles/LodeRunner.dir/sources/Player.cpp.o"

@@ -14,10 +14,11 @@
 #include <type_traits>
 #include <vector>
 #include <algorithm>
+#include <unistd.h>
 
 extern Rgba BACKGROUND_COLOR;
 
-namespace Game
+namespace game
 {
 
 enum class Mode 
@@ -59,8 +60,8 @@ MenuCursor& operator++(MenuCursor& cursor, int)
 
 std::map<SpriteName, Sprite*> sprites;
 
-int HEIGHT = 950;
-int WIDTH = 912;
+int SCREEN_HEIGHT = 950;
+int SCREEN_WIDTH = 912;
 
 class Game : public Framework {
 public:
@@ -69,8 +70,15 @@ public:
         currentMode = Mode::MENU;
         menuCursor = MenuCursor::LVL_1;
 
-        width = WIDTH;
-        height = HEIGHT;
+        isKeyHeld[FRKey::UP] = false;
+        isKeyHeld[FRKey::DOWN] = false;
+        isKeyHeld[FRKey::LEFT] = false;
+        isKeyHeld[FRKey::RIGHT] = false;
+
+        player = Player(2*UNIT_SIZE,20*UNIT_SIZE);
+
+        width = SCREEN_WIDTH;
+        height = SCREEN_HEIGHT;
 		fullscreen = false;
 	}
 
@@ -86,14 +94,34 @@ public:
 
 	virtual bool Tick() {
 
-        (currentMode == Mode::MENU) ? drawMenu_() : drawGame_();
+        if(currentMode == Mode::MENU)
+            drawMenu_();
+        else if(currentMode == Mode::GAME)
+        {
+            static const int FRAME_DELAY = 10000;
+            static int endPrevFrame = 0;
+
+            if(FRAME_DELAY > (getTickCount() - endPrevFrame))
+                usleep(FRAME_DELAY - getTickCount() + endPrevFrame);
+
+            drawGame_();
+            
+            for(auto it = isKeyHeld.begin(); it != isKeyHeld.end(); ++it)
+                if(it->second == true)
+                {
+                    player.run(it->first, lvl);
+                    break;
+                }
+
+            drawPlayer_();
+
+            endPrevFrame = getTickCount();
+        }
 		return false;
 	}
 
 	virtual void onMouseMove(int x, int y, int xrelative, int yrelative) {
-
-	}
-
+} 
 	virtual void onMouseButtonClick(FRMouseButton button, bool isReleased) 
     {
         if(currentMode == Mode::MENU)
@@ -126,11 +154,18 @@ public:
         }
         else if(currentMode == Mode::GAME)
         {
+            isKeyHeld[k] = true;
         }
 	}
 
     
-	virtual void onKeyReleased(FRKey k) { }
+	virtual void onKeyReleased(FRKey k)
+    {
+        if(currentMode == Mode::GAME)
+        {
+            isKeyHeld[k] = false;
+        }
+    }
 
 	virtual const char* GetTitle() override
 	{
@@ -145,8 +180,11 @@ private:
     Mode currentMode;
     MenuCursor menuCursor;
 
+    std::map<FRKey, bool> isKeyHeld;
+
     void drawMenu_();
     void drawGame_();
+    void drawPlayer_();
 };
 
 void Game::drawMenu_()
@@ -186,7 +224,7 @@ void Game::drawMenu_()
     for(auto item : spritesToDraw)
     {
         getSpriteSize(sprites[item], sprite_w, sprite_h);
-        drawSprite(sprites[item], WIDTH/2 - sprite_w/2, i * HEIGHT/5+10);
+        drawSprite(sprites[item], SCREEN_WIDTH/2 - sprite_w/2, i * SCREEN_HEIGHT/5+10);
         i++;
     }
 
@@ -203,9 +241,14 @@ void Game::drawGame_()
     lvl.draw();
 }
 
+void Game::drawPlayer_() 
+{
+    drawSprite(sprites[SpriteName::player_view_right], player.getX(), player.getY());
+}
+
 } 
 
 int main(int argc, char *argv[])
 {
-    return run(new Game::Game); 
+    return run(new game::Game); 
 }

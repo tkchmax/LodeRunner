@@ -1,6 +1,6 @@
 #include "Level.h"
 
-namespace Game 
+namespace game 
 {
 extern std::map<SpriteName, Sprite*> sprites;
 
@@ -87,7 +87,6 @@ void Level::draw()
         x=0;
     }
 
-    drawSprite(sprites[SpriteName::player_widestep_right], UNIT_SIZE, y-2*UNIT_SIZE);
     
     /*draw game bar*/
     for(unsigned i=0; i<board_[0].size();++i)
