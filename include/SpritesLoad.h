@@ -25,6 +25,12 @@ enum class SpriteName
     heart,
     
     player_view_right,
+    player_run0_l,
+    player_run1_l,
+    player_run2_l,
+    player_run0_r,
+    player_run1_r,
+    player_run2_r,
 
     player_widestep_right
 

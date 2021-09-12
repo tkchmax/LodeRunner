@@ -30,8 +30,9 @@ class Level
     public:
         Level() : rawLevel_("none"), nGuards_(0){}
         void draw();
-        void showBoard();
+        void showBoard() const;
         const std::vector<std::vector<UNIT_TYPE>>& getBoard() {return board_;}
+        bool isBlocker(FRKey k, unsigned x, unsigned y) const;
     private:
         std::vector<std::vector<UNIT_TYPE>> board_;
         std::string rawLevel_;

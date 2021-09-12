@@ -10,12 +10,16 @@ void Player::run(FRKey k, const Level& lvl)
   switch(k)
   {
       case FRKey::LEFT:
-        x -= UNIT_SIZE/4;
+          if(!lvl.isBlocker(FRKey::LEFT, x, y))
+            x -= UNIT_SIZE/4;
 
         break;
       case FRKey::RIGHT:
-        x += UNIT_SIZE/4;
+        if(!lvl.isBlocker(FRKey::RIGHT, x, y))
+            x += UNIT_SIZE/4;
+        break;
   }
+  movementProgress++;
 }
 
 }

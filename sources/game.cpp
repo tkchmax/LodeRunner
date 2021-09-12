@@ -98,7 +98,7 @@ public:
             drawMenu_();
         else if(currentMode == Mode::GAME)
         {
-            static const int FRAME_DELAY = 10000;
+            static const int FRAME_DELAY = 100000/2;
             static int endPrevFrame = 0;
 
             if(FRAME_DELAY > (getTickCount() - endPrevFrame))
@@ -155,6 +155,15 @@ public:
         else if(currentMode == Mode::GAME)
         {
             isKeyHeld[k] = true;
+            switch(k)
+            {
+                case FRKey::LEFT:
+                    player.setViewDir(Dir::LEFT);
+                    break;
+                case FRKey::RIGHT:
+                    player.setViewDir(Dir::RIGHT);
+                    break;
+            }
         }
 	}
 
@@ -164,6 +173,7 @@ public:
         if(currentMode == Mode::GAME)
         {
             isKeyHeld[k] = false;
+            player.setMovementProgress(Movement::STAY);
         }
     }
 
@@ -243,7 +253,40 @@ void Game::drawGame_()
 
 void Game::drawPlayer_() 
 {
-    drawSprite(sprites[SpriteName::player_view_right], player.getX(), player.getY());
+    //drawSprite(spritess[SpriteName::player_view_right], player.getX(), player.getY());
+    Sprite* s;
+    bool isVerticalMove = isKeyHeld[FRKey::UP] || isKeyHeld[FRKey::DOWN];
+    bool isHorizontalMove = isKeyHeld[FRKey::LEFT] || isKeyHeld[FRKey::RIGHT];
+
+    if(isHorizontalMove)
+    {
+        switch(player.getMovementProgress())
+        {
+            case Movement::MOVE_1:
+            case Movement::MOVE_3:
+                s = (player.getViewDir() == Dir::LEFT) ? sprites[SpriteName::player_run0_l]
+                    : sprites[SpriteName::player_run0_r];
+                break;
+            case Movement::MOVE_2:
+                s = (player.getViewDir() == Dir::LEFT) ? sprites[SpriteName::player_run1_l]
+                    : sprites[SpriteName::player_run1_r];
+                break;
+            case Movement::MOVE_4:
+                s = (player.getViewDir() == Dir::LEFT) ? sprites[SpriteName::player_run2_l]
+                    : sprites[SpriteName::player_run2_r];
+                break;
+        }
+    }
+    else if(isVerticalMove)
+    {
+
+    }
+    else
+    {
+        s = sprites[SpriteName::player_view_right];
+    }
+    drawSprite(s, player.getX(), player.getY());
+
 }
 
 } 

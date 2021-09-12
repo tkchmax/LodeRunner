@@ -1,4 +1,6 @@
 #include "Level.h"
+#include <pthread.h>
+#include <stdexcept>
 
 namespace game 
 {
@@ -50,7 +52,7 @@ void Level::createLevel()
     }
 
 
-void Level::showBoard() 
+void Level::showBoard() const
 {
     std::cout<<"h:"<<board_.size()<<"\tw: "<<board_[0].size()<<std::endl;
     for(int i=0; i<board_.size(); ++i)
@@ -100,4 +102,31 @@ void Level::draw()
     
 }
 
+bool Level::isBlocker(FRKey k, unsigned x, unsigned y) const
+{
+    int  xBlocker,yBlocker;
+    switch(k)
+    {
+        case FRKey::LEFT:
+            xBlocker = (x-1) / UNIT_SIZE;
+            yBlocker = y / UNIT_SIZE;
+            break;
+        case FRKey::RIGHT:
+            xBlocker = (x+UNIT_SIZE+5)/UNIT_SIZE;
+            yBlocker = y/UNIT_SIZE;
+            break;
+
+    }
+
+    try 
+    {
+        UNIT_TYPE blocker = board_.at(yBlocker).at(xBlocker);
+        return blocker == UNIT_TYPE::Rock ||
+            blocker  == UNIT_TYPE::BedRock;
+    }catch(std::out_of_range& e) 
+    {
+        return false;
+    }
+
+}
 }
