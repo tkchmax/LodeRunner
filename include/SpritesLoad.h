@@ -4,7 +4,6 @@
 
 #include <map>
 #include "Framework.h"
-
 enum class SpriteName
 {
     Rock,
@@ -31,6 +30,10 @@ enum class SpriteName
     player_run0_r,
     player_run1_r,
     player_run2_r,
+    
+    grab1,
+    grab2,
+    grab3,
 
     player_widestep_right
 

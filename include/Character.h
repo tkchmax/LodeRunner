@@ -41,13 +41,17 @@ class Character
         Dir getViewDir() {return viewDir;}
         Character& setViewDir(Dir d) {viewDir = d; return *this;}
         Character& setMovementProgress(Movement m) {movementProgress = m; return *this;} 
-        bool isFalling();
+        bool isFalling(const Level& lvl);
+
 
     protected:
         unsigned x,y;
         Dir viewDir;
         //Movement currentMovement;        
         Movement  movementProgress;
+
+        void shiftX_();
+        void shiftY_();
 };
 
 

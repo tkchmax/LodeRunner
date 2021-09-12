@@ -28,6 +28,9 @@ std::map<SpriteName, Sprite*> LoadSprites()
     sprites[SpriteName::player_run0_r] = createSprite("../data/characters/run0_r.png");
     sprites[SpriteName::player_run1_r] = createSprite("../data/characters/run1_r.png");
     sprites[SpriteName::player_run2_r] = createSprite("../data/characters/run2_r.png");
+    sprites[SpriteName::grab1] = createSprite("../data/characters/grab1.png");
+    sprites[SpriteName::grab2] = createSprite("../data/characters/grab2.png");
+    sprites[SpriteName::grab3] = createSprite("../data/characters/grab3.png");
 
     return sprites;
 }

@@ -31,8 +31,11 @@ class Level
         Level() : rawLevel_("none"), nGuards_(0){}
         void draw();
         void showBoard() const;
-        const std::vector<std::vector<UNIT_TYPE>>& getBoard() {return board_;}
+        const std::vector<std::vector<UNIT_TYPE>>& getBoard() const {return board_;}
         bool isBlocker(FRKey k, unsigned x, unsigned y) const;
+        bool isLadderUnder(unsigned x, unsigned y) const;
+        bool isLadderAbove(unsigned x, unsigned y) const;
+        bool isPossibleToGrab(unsigned x, unsigned y) const;
     private:
         std::vector<std::vector<UNIT_TYPE>> board_;
         std::string rawLevel_;

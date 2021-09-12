@@ -253,37 +253,42 @@ void Game::drawGame_()
 
 void Game::drawPlayer_() 
 {
-    //drawSprite(spritess[SpriteName::player_view_right], player.getX(), player.getY());
-    Sprite* s;
-    bool isVerticalMove = isKeyHeld[FRKey::UP] || isKeyHeld[FRKey::DOWN];
-    bool isHorizontalMove = isKeyHeld[FRKey::LEFT] || isKeyHeld[FRKey::RIGHT];
+    Sprite* s = sprites[SpriteName::player_view_right];
 
-    if(isHorizontalMove)
+    bool isVerticalMove = (isKeyHeld[FRKey::UP] || isKeyHeld[FRKey::DOWN]) 
+        && lvl.isLadderAbove(player.getX(), player.getY());
+
+
+    bool isHorizontalMove = (isKeyHeld[FRKey::LEFT] || isKeyHeld[FRKey::RIGHT])
+        && !lvl.isBlocker(FRKey::LEFT, player.getX(), player.getY())
+        && !lvl.isBlocker(FRKey::RIGHT, player.getX(), player.getY());
+
+    switch(player.getMovementProgress())
     {
-        switch(player.getMovementProgress())
-        {
-            case Movement::MOVE_1:
-            case Movement::MOVE_3:
+        case Movement::MOVE_1:
+        case Movement::MOVE_3:
+            if(isHorizontalMove)
                 s = (player.getViewDir() == Dir::LEFT) ? sprites[SpriteName::player_run0_l]
                     : sprites[SpriteName::player_run0_r];
-                break;
-            case Movement::MOVE_2:
-                s = (player.getViewDir() == Dir::LEFT) ? sprites[SpriteName::player_run1_l]
-                    : sprites[SpriteName::player_run1_r];
-                break;
-            case Movement::MOVE_4:
-                s = (player.getViewDir() == Dir::LEFT) ? sprites[SpriteName::player_run2_l]
-                    : sprites[SpriteName::player_run2_r];
-                break;
-        }
-    }
-    else if(isVerticalMove)
-    {
+            else if(isVerticalMove)
+                s = sprites[SpriteName::grab1];
+            break;
 
-    }
-    else
-    {
-        s = sprites[SpriteName::player_view_right];
+        case Movement::MOVE_2:
+            if(isHorizontalMove)
+            s = (player.getViewDir() == Dir::LEFT) ? sprites[SpriteName::player_run1_l]
+                : sprites[SpriteName::player_run1_r];
+            else if(isVerticalMove)
+                s = sprites[SpriteName::grab2];
+            break;
+
+        case Movement::MOVE_4:
+            if(isHorizontalMove)
+            s = (player.getViewDir() == Dir::LEFT) ? sprites[SpriteName::player_run2_l]
+                : sprites[SpriteName::player_run2_r];
+            else if(isVerticalMove)
+                s = sprites[SpriteName::grab3];
+            break;
     }
     drawSprite(s, player.getX(), player.getY());
 

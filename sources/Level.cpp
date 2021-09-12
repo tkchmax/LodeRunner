@@ -104,7 +104,7 @@ void Level::draw()
 
 bool Level::isBlocker(FRKey k, unsigned x, unsigned y) const
 {
-    int  xBlocker,yBlocker;
+    unsigned  xBlocker,yBlocker;
     switch(k)
     {
         case FRKey::LEFT:
@@ -115,7 +115,14 @@ bool Level::isBlocker(FRKey k, unsigned x, unsigned y) const
             xBlocker = (x+UNIT_SIZE+5)/UNIT_SIZE;
             yBlocker = y/UNIT_SIZE;
             break;
-
+        case FRKey::UP:
+            xBlocker = x / UNIT_SIZE;
+            yBlocker = (y-1) / UNIT_SIZE;
+            break;
+        case FRKey::DOWN:
+            xBlocker = x / UNIT_SIZE;
+            yBlocker = (y + UNIT_SIZE+1)/UNIT_SIZE;
+            break;
     }
 
     try 
@@ -125,8 +132,31 @@ bool Level::isBlocker(FRKey k, unsigned x, unsigned y) const
             blocker  == UNIT_TYPE::BedRock;
     }catch(std::out_of_range& e) 
     {
-        return false;
+        return true;
     }
 
+
+}
+
+bool Level::isLadderAbove(unsigned x, unsigned y) const 
+{
+    unsigned xAbove = (x+UNIT_SIZE/2) / UNIT_SIZE;
+    unsigned yAbove = (y+UNIT_SIZE-1)/ UNIT_SIZE;
+
+    return board_[yAbove][xAbove] == UNIT_TYPE::Ladder;
+
+}
+bool Level::isLadderUnder(unsigned x, unsigned y) const 
+{
+    unsigned xUnder = (x+UNIT_SIZE/2)/UNIT_SIZE;
+    unsigned yUnder = (y+UNIT_SIZE+1)/UNIT_SIZE;
+    return board_[yUnder][xUnder] == UNIT_TYPE::Ladder;
+}
+
+bool Level::isPossibleToGrab(unsigned x, unsigned y) const 
+{
+    unsigned xCenter = (x+UNIT_SIZE/2)/UNIT_SIZE;
+    unsigned yCenter = (y+UNIT_SIZE/2)/UNIT_SIZE;
+    return board_[yCenter][xCenter] == UNIT_TYPE::Ladder;
 }
 }

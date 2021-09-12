@@ -8,22 +8,6 @@
 
 ../Framework/inc/Framework.h
 
-../include/Character.h
-Framework.h
-../include/Framework.h
-Level.h
-../include/Level.h
-vector
--
-map
--
-iostream
--
-
-../include/Guard.h
-Character.h
-../include/Character.h
-
 ../include/Level.h
 Framework.h
 ../include/Framework.h
@@ -40,47 +24,17 @@ map
 SpritesLoad.h
 ../include/SpritesLoad.h
 
-../include/Player.h
-Character.h
-../include/Character.h
-
 ../include/SpritesLoad.h
 map
 -
 Framework.h
 ../include/Framework.h
 
-/home/max/projects++/LodeRunner/sources/game.cpp
-Framework.h
-/home/max/projects++/LodeRunner/sources/Framework.h
-Player.h
-/home/max/projects++/LodeRunner/sources/Player.h
-Guard.h
-/home/max/projects++/LodeRunner/sources/Guard.h
+/home/max/projects++/LodeRunner/sources/Level.cpp
 Level.h
 /home/max/projects++/LodeRunner/sources/Level.h
-SpritesLoad.h
-/home/max/projects++/LodeRunner/sources/SpritesLoad.h
-cassert
+pthread.h
 -
-string.h
--
-stdio.h
--
-string
--
-stdlib.h
--
-iostream
--
-math.h
--
-type_traits
--
-vector
--
-algorithm
--
-unistd.h
+stdexcept
 -
 
